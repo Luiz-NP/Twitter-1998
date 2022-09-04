@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 37.5rem;
+    height: 5.4rem;
+
+    background-color: var(--bg-color);
+
+    padding: 6px 16px;
+
+    box-shadow: 1px 1px 1px black;
+}
+
+.ungroupButton {
+    background: none;
+    padding: 1px 0 0 1px;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    margin: 6px 0;
+}
