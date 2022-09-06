@@ -5,8 +5,11 @@ import Image from "next/image";
 import styles from "../styles/home.module.css";
 
 //images
-import profilePic from "../public/profile.png";
-import ungroupImg from "../public/ungroup.png";
+import icon1 from "../public/images/icon1.png";
+import ungroupImg from "../public/images/ungroup.png";
+
+//components
+import { Card } from "../components/Card";
 
 export default function Home() {
   return (
@@ -16,13 +19,13 @@ export default function Home() {
       </Head>
       <header className={styles.header}>
           <Image
-           src={profilePic}
-           className={styles.profilePic}
+           src={icon1}
            />
         <button className={styles.ungroupButton}>
           <Image src={ungroupImg} />
         </button>
       </header>
+      <Card />
     </div>
   );
 }

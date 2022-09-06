@@ -1,0 +1,108 @@
+.container {
+    width: 34.3rem;
+    height: 16rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+    border-radius: 1px;
+
+    color: var(--dark-gray);
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    gap: 1.185rem;
+
+    padding: .8rem 0 0 1.58rem;
+}
+
+.question span {
+    margin-top: 2.2rem;
+}
+
+.input {
+    width: 31.5rem;
+
+    margin-top: calc(3rem - 16px);
+    margin-left: 1.6rem;
+    
+    background: none;
+    
+    border-bottom: 1px solid var(--dark-gray);
+    border-inline: none;
+    border-top: none;
+
+    outline: none;
+
+
+}
+
+.buttons {
+    display: flex;
+    gap: 3.55px;
+
+    margin-left: 1.6rem;
+
+    list-style: none;
+}
+
+.buttons li {
+    background: none;
+    padding: 3px 0 0 2.5px;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    margin: 6px 0;
+
+    border: none;
+    border-radius: 1px;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.buttons li button {
+    background: none;
+    border: none;
+    padding: .6rem;
+
+    color: black;
+}
+
+.buttons li:nth-child(2) {
+    padding-top: .61rem;
+}
+
+.buttons li:nth-child(7) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 6.5rem;
+    height: 3.6rem;
+
+    margin-left: 1.626rem;
+
+    padding-bottom: .2rem;
+}
+
+.buttons li:nth-child(7) button {
+    font-family: 'VT323';
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.buttons li:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .4rem .2rem .2rem;
+}
+
+.buttons li:nth-child(2):active {
+    padding-top: .61rem;
+}

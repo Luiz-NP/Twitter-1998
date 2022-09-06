@@ -18,6 +18,8 @@ body {
   font-size: 62.5%;
 
   --bg-color: #B8B8B8;
+  --light-gray: #E1E1E1; 
+  --dark-gray: #797979;
 }
 
 a {
