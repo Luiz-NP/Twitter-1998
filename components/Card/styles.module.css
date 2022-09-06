@@ -11,17 +11,19 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 20px;
+
+    margin-top: 7rem;
 }
 
-.question {
+.header {
     display: flex;
     align-items: center;
     gap: 1.185rem;
-
-    padding: .8rem 0 0 1.58rem;
+    
+    padding-left: 1.58rem;
 }
 
-.question span {
+.span {
     margin-top: 2.2rem;
 }
 
@@ -30,7 +32,8 @@
 
     margin-top: calc(3rem - 16px);
     margin-left: 1.6rem;
-    
+    margin-bottom: .8rem;
+
     background: none;
     
     border-bottom: 1px solid var(--dark-gray);
@@ -39,7 +42,11 @@
 
     outline: none;
 
-
+    color: black;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
 }
 
 .buttons {

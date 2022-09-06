@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 
 //images
-import icon1 from "../../public/images/icon1.png";
+import icon1 from "../../public/images/icons/icon1.png";
 import pictureIcon from "../../public/images/image.png";
 import gifIcon from "../../public/images/gif.png";
 import chartIcon from "../../public/images/chart.png";
@@ -15,9 +15,9 @@ import locationIcon from "../../public/images/location.png";
 export function Card() {
     return (
         <div className={styles.container}>
-            <div className={styles.question}>
+            <div className={styles.header}>
                 <Image src={icon1}/>
-                <span>What’s <br /> happening?</span>
+                <span className={styles.span}>What’s <br /> happening?</span>
             </div>
             
             <input 

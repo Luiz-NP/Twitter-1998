@@ -1,0 +1,78 @@
+.container {
+    width: 34.3rem;
+    height: 12.4rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+    border-radius: 1px;
+
+    color: var(--dark-gray);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1.185rem;
+
+    padding-left:1.58rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+
+    margin-bottom: calc(1.2rem - .4rem);
+    margin-top: .8rem;
+
+    height: 5.2rem;
+    width: 25.1rem;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+
+    color: black;
+}
+
+.container span {
+    color: var(--dark-gray);
+}
+
+
+.buttons {
+    display: flex;
+    gap: 1.2rem;
+
+    margin-left: 7.6rem;
+
+    list-style: none;
+}
+
+.buttons li {
+    background: none;
+    padding: 3px 0 0 2.5px;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    margin: 6px 0;
+
+    border: none;
+    border-radius: 1px;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.buttons li button {
+    background: none;
+    border: none;
+    padding: .6rem;
+
+    color: black;
+}
+
+.buttons li:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .4rem .2rem .2rem;
+}

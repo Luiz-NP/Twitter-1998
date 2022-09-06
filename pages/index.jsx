@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "../styles/home.module.css";
 
 //images
-import icon1 from "../public/images/icon1.png";
+import icon1 from "../public/images/icons/icon1.png";
 import ungroupImg from "../public/images/ungroup.png";
 import homeIcon from "../public/images/home.png";
 import searchIcon from "../public/images/search.png";
@@ -14,6 +14,7 @@ import messageIcon from "../public/images/message.png";
 
 //components
 import { Card } from "../components/Card";
+import { Post } from "../components/Post";
 
 export default function Home() {
   return (
@@ -33,6 +34,11 @@ export default function Home() {
       </header>
 
       <Card />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
 
       <footer className={styles.footer}>
         <ul>
