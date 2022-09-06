@@ -5,12 +5,12 @@ import styles from "./styles.module.css";
 
 //images
 import icon1 from "../../public/images/icon1.png";
-import picturePic from "../../public/images/image.png";
-import gifPic from "../../public/images/gif.png";
-import chartPic from "../../public/images/chart.png";
-import emojiPic from "../../public/images/emoji.png";
-import calendarPic from "../../public/images/time.png";
-import locationPic from "../../public/images/location.png";
+import pictureIcon from "../../public/images/image.png";
+import gifIcon from "../../public/images/gif.png";
+import chartIcon from "../../public/images/chart.png";
+import emojiIcon from "../../public/images/emoji.png";
+import calendarIcon from "../../public/images/time.png";
+import locationIcon from "../../public/images/location.png";
 
 export function Card() {
     return (
@@ -28,32 +28,32 @@ export function Card() {
             <ul className={styles.buttons}>
                 <li>
                     <button>
-                        <Image src={picturePic}/>
+                        <Image src={pictureIcon}/>
                     </button>
                 </li>
                 <li>
                     <button>
-                        <Image src={gifPic}/>
+                        <Image src={gifIcon}/>
                     </button>
                 </li>
                 <li>
                     <button>
-                        <Image src={chartPic}/>
+                        <Image src={chartIcon}/>
                     </button>
                 </li>
                 <li>
                     <button>
-                        <Image src={emojiPic}/>
+                        <Image src={emojiIcon}/>
                     </button>
                 </li>
                 <li>
                     <button>
-                        <Image src={calendarPic}/>
+                        <Image src={calendarIcon}/>
                     </button>
                 </li>
                 <li>
                     <button>
-                        <Image src={locationPic}/>
+                        <Image src={locationIcon}/>
                     </button>
                 </li>
                 <li>
