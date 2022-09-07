@@ -12,6 +12,8 @@ body {
   margin: 0;
   font-family: 'VT323', monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  background: var(--bg-color);
 }
 
 :root {
@@ -25,15 +27,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
