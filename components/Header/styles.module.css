@@ -1,3 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 37.5rem;
+    height: 5.4rem;
+
+    position: fixed;
+    z-index: 2;
+
+    padding: .6rem 1.6rem;
+
+    border-bottom: 2px solid black;
+
+    background-color: var(--bg-color);
+}
+
+.header img {
+    cursor: pointer;
+}
+
 .form {
     display: flex;
     align-items: center;
@@ -24,7 +46,7 @@
     font-family: 'VT323';
 }
 
-.button {
+.searchButton {
     background: none;
     border: none;
 
@@ -37,22 +59,9 @@
     padding: .7rem .5rem .5rem .8rem;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 37.5rem;
-    height: 5.4rem;
-
-    position: fixed;
-    z-index: 2;
-
-    padding: .6rem 1.6rem;
-
-    border-bottom: 2px solid black;
-
-    background-color: var(--bg-color);
+.searchButton:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .8rem .6rem .5rem .8rem;
 }
 
 .ungroupButton {
@@ -72,6 +81,6 @@
 
 .ungroupButton:active {
     box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
-    padding: .4rem .2rem .2rem;
+    padding: .5rem 0 0 .25rem;
 }
 

@@ -37,5 +37,5 @@
 
 .footer ul li button:active {
     box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
-    padding-right: .8rem;
+    padding: .8rem .6rem .5rem .8rem;
 }

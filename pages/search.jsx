@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 //css
 import reuse from "../styles/home.module.css";
@@ -25,7 +26,9 @@ export default function Search() {
                         <li>
                             <div>
                                 <span>Football</span>
-                                <h2>Zinadine Zidane</h2>
+                                <Link href="#">
+                                    <h2><a>Zinadine Zidane</a></h2>
+                                </Link>
                                 <span>10,2 B Tweet</span>
                             </div>
                         </li>

@@ -14,7 +14,11 @@ export function Header({searchBar}) {
     return (
         <header className={styles.header}>
             <Link href="/profile">
-                <Image src={icon1}/>
+                <Image 
+                 src={icon1}
+                 width={48}
+                 height={48}
+                />
             </Link>
             {searchBar && 
                 <div className={styles.form}>
@@ -23,7 +27,7 @@ export function Header({searchBar}) {
                      placeholder="Search Twitter"
                      type="text" 
                     />
-                    <button className={styles.button}>
+                    <button className={styles.searchButton}>
                         <Image 
                          src={searchIcon}
                          width={36} 

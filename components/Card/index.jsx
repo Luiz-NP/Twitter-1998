@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 //css
 import styles from "./styles.module.css";
@@ -16,7 +17,13 @@ export function Card() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <Image src={icon1}/>
+                <Link href="/profile">
+                    <Image 
+                     src={icon1}
+                     width={48}
+                     height={48}
+                    />
+                </Link>
                 <span className={styles.span}>What’s <br /> happening?</span>
             </div>
             
