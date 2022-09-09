@@ -1,0 +1,110 @@
+.editCard {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    gap: 1.2rem;
+
+    width: 34.3rem;
+
+    margin-top: 7.2rem;
+
+    padding: 5.6rem 1.6rem 2.4rem 1.6rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: var(--bg-color);
+
+    border: none;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.saveButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 5.9rem;
+    height: 3.6rem;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: var(--bg-color);
+
+    border: none;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.closeButton:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .9rem .9rem .8rem .8rem;
+}
+
+.saveButton:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .9rem .9rem .8rem .8rem;
+}
+
+.image {
+    margin-bottom: 2.1rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+
+    color: var(--dark-gray);
+}
+
+.input input {
+    width: 31.1rem;
+    height: 3.6rem;
+
+    padding: 1rem;
+    margin-top: 1px;
+
+    outline: none;
+
+    border: none;
+
+    box-shadow: inset 2px 2px 2px black;
+
+    color: black;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
+}

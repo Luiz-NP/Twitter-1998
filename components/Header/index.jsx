@@ -13,6 +13,10 @@ import searchIcon from "../../public/images/search.png";
 export function Header({searchBar}) {
     return (
         <header className={styles.header}>
+            <div className={styles.menu}>
+
+            </div>
+            
             <Link href="/profile">
                 <Image 
                  src={icon1}

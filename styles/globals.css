@@ -33,4 +33,5 @@ a {
 
 button {
   cursor: pointer;
+  border-radius: 1px;
 }

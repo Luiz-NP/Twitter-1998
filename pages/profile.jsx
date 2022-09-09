@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 //css
 import reuse from "../styles/home.module.css";
@@ -32,9 +33,11 @@ export default function Profile() {
                          height={132}
                         />
 
-                        <button className={styles.editButton}>
-                            Edit Profile
-                        </button>
+                        <Link href="/editProfile">
+                            <button className={styles.editButton}>
+                                Edit Profile
+                            </button>
+                        </Link>
                     </div>
 
                     <div>
