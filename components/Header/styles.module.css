@@ -84,7 +84,14 @@
     padding: .5rem 0 0 .25rem;
 }
 
+
+/* ========== MENU ========== */
+
+
 .menu {
+    display: flex;
+    flex-direction: column;
+
     position: absolute;
     z-index: 3;
 
@@ -92,10 +99,135 @@
     top: 0;
 
     width: 25.3rem;
-    height: 81.2rem;
+    height: 100vh;
 
-    background-color: red;
+    padding: 0 1.6rem 3.3rem 1.6rem;
+
+    background-color: var(--bg-color);
 
     transform: translateX(-100%);
+    transition: all 200ms;
+
+    box-shadow: 2px 2px 2px black;
+
+    overflow-y: scroll;
 }
 
+.head {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.head span {
+    margin-top: 2.4rem;
+    margin-bottom: 3.6rem;
+}
+
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    margin-top: 1.4rem;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
+
+    background-color: var(--bg-color);
+
+    border: none;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.closeButton:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .9rem .9rem .8rem .8rem;
+}
+
+.username h2 {
+    margin-top: 1.2rem;
+
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+}
+
+.username span {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+
+    color: var(--dark-gray);
+}
+
+.follow {
+    display: flex;
+    gap: 1.6rem;
+
+    margin-top: 2.4rem;
+
+    color: var(--dark-gray);
+    
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.follow strong {
+    color: black;
+    font-weight: 400;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    list-style: none;
+
+    margin-top: 3.6rem;
+    margin-bottom: 11.5rem;
+}
+
+.buttons li {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.buttons li button {
+    background: none;
+    border: none;
+    border-radius: 1px;
+
+    padding: .7rem .5rem .5rem .8rem;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    color: black;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+}
+
+.buttons li button:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .8rem .5rem .5rem .8rem;
+}
+
+.logout a {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
