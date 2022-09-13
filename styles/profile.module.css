@@ -6,13 +6,13 @@
 
     gap: 1.2rem;
 
-    width: min(34.3rem, 100%);
-
-    margin-top: 7.2rem;
+    width: min(47.8rem, 100%);
 
     padding: 1.6rem 1.6rem 6rem 1.6rem;
 
     box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+    position: relative;
 }
 
 .top {
@@ -25,7 +25,8 @@
 }
 
 .editButton {
-    padding: .8rem 1.2rem;
+    position: absolute;
+    right: 1.6rem;
 
     width: 12.1rem;
     height: 3.6rem;
@@ -96,8 +97,12 @@
 }
 
 .buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+
     gap: 2px;
+
+    width: 100%;
 
     position: absolute;
     right: 0;
@@ -105,13 +110,12 @@
 
     list-style: none;
 }
-
 .buttons li button {
     background: none;
     border: none;
     border-radius: 1px;
 
-    padding: 1rem 1.38rem 1rem 1.6rem;
+    padding: 1rem 1.38rem 1rem 1rem;
 
     width: 100%;
     height: 3.6rem;
@@ -120,7 +124,9 @@
 
     box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
 
+    box-sizing: border-box;
 }
+
 
 .buttons li button:active {
     box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
