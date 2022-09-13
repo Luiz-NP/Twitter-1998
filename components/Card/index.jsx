@@ -24,7 +24,7 @@ export function Card() {
                      height={48}
                     />
                 </Link>
-                <span className={styles.span}>What’s <br /> happening?</span>
+                <span className={styles.question}>What’s <br /> happening?</span>
             </div>
             
             <input 

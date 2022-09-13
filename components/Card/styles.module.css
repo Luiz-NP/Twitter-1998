@@ -1,6 +1,6 @@
 .container {
     width: 34.3rem;
-    height: 16rem;
+    height: 100%;
 
     box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
 
@@ -9,10 +9,8 @@
     color: var(--dark-gray);
 
     font-weight: 400;
-    font-size: 20px;
-    line-height: 20px;
-
-    margin-top: 7rem;
+    font-size: 2rem;
+    line-height: 2rem;
 }
 
 .header {
@@ -27,7 +25,7 @@
     cursor: pointer;
 }
 
-.span {
+.question {
     margin-top: 2.2rem;
 }
 
@@ -116,4 +114,37 @@
 
 .buttons li:nth-child(2):active {
     padding-top: .61rem;
+}
+
+@media (min-width: 834px) {
+    .container {
+        width: 47.8rem;
+        height: 100%;
+
+        padding-bottom: 1rem;
+    }
+
+    .header {
+        padding-top: .8rem;
+    }
+
+    .question br {
+        display: none;
+    }
+
+    .buttons {
+        margin-left: 7.6rem;
+        gap: 1.1rem;
+
+    }
+
+    .buttons li:nth-child(7) {
+        margin-left: calc(5rem - 1.626rem);
+    }
+
+    .input {
+        width: 39.4rem;
+        margin-left: 7.6rem;
+    }
+    
 }

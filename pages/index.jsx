@@ -8,6 +8,7 @@ import { Header } from "../components/Header";
 import { Card } from "../components/Card";
 import { Post } from "../components/Post";
 import { Footer } from "../components/Footer";
+import { AsideMenu } from "../components/AsideMenu";
 
 export default function Home() {
   return (
@@ -19,12 +20,26 @@ export default function Home() {
 
       <Header />
 
-      <Card />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <div className={styles.main}>
+        <div className={styles.asideMenu}>
+          <AsideMenu />
+        </div>
+        <div className={styles.content}>
+          <Card />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+        </div>
+      </div>
+
+          
 
       <Footer />
     </div>

@@ -15,12 +15,12 @@ export function Post() {
         <div className={styles.container}>
             <div className={styles.header}>
                 
-                <Image src={icon2}/>
+                <Image src={icon2} />
 
                 <div className={styles.content}>
                     <p>Tommy Blue <span>@bluee</span></p>
                     
-                    <p>Amet habitant mollis adipiscing pretium scelerisque urna euismod nec nullam.</p>
+                    <p> Amet habitant mollis adipiscing pretium scelerisque urna euismod nec nullam.</p>
                 </div>
             </div>
 

@@ -7,8 +7,8 @@ import styles from "./styles.module.css";
 
 //images
 import icon1 from "../../public/images/icons/icon1.png";
+import logo from "../../public/images/icons/logo.png";
 import ungroupImg from "../../public/images/ungroup.png";
-import searchIcon from "../../public/images/search.png";
 import closeIcon from "../../public/images/close.png";
 import profileIcon from "../../public/images/profile.png";
 import notificationIcon from "../../public/images/notifications.png";
@@ -17,6 +17,7 @@ import messageIcon from "../../public/images/message.png";
 import bookmarkIcon from "../../public/images/bookmark.png";
 import listIcon from "../../public/images/lists.png";
 import moreIcon from "../../public/images/more.png";
+import { SearchBar } from "../SearchBar";
 
 export function Header({searchBar}) {
     const menu = useRef();
@@ -135,28 +136,33 @@ export function Header({searchBar}) {
                 </span>
             </div>
 
-                <Image 
-                 src={icon1}
-                 width={48}
-                 height={48}
-                 onClick={showMenu}
-                />
+                <span className={styles.mobileImg}>
+                    <Image
+                     src={icon1}
+                     width={48}
+                     height={48}
+                     onClick={showMenu}
+                    />
+                </span>
+
+                <span className={styles.deskImg}>
+                    <Link href="/">
+                        <Image
+                         src={logo}
+                         width={48}
+                         height={48}
+                        />
+                    </Link>
+                </span>
+
+                {!searchBar &&
+                    <span className={styles.title}>
+                      Homepage
+                    </span>
+                }
 
             {searchBar && 
-                <div className={styles.form}>
-                    <input 
-                     className={styles.input}
-                     placeholder="Search Twitter"
-                     type="text" 
-                    />
-                    <button className={styles.searchButton}>
-                        <Image 
-                         src={searchIcon}
-                         width={36} 
-                         height={36}
-                        />
-                    </button>
-                </div>
+                <SearchBar />
             }
             <button className={styles.ungroupButton}>
                 <Image src={ungroupImg}/>
