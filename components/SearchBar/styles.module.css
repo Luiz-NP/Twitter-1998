@@ -1,0 +1,42 @@
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: max(18.7rem, 100%);
+    height: 3.6rem;
+
+    padding: 1rem;
+    margin-top: 1px;
+
+    outline: none;
+
+    border: none;
+
+    box-shadow: inset 2px 2px 2px black;
+
+    color: black;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
+}
+
+.searchButton {
+    background: none;
+    border: none;
+
+    width: 3.6rem;
+    height: 3.6rem;
+    text-align: center;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+    padding: .7rem .5rem .5rem .8rem;
+}
+
+.searchButton:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .8rem .6rem .5rem .8rem;
+}

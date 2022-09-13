@@ -1,0 +1,112 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    list-style: none;
+}
+
+.menu li {
+    width: 27.4rem;
+    height: 3.6rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+    border-radius: 1px;
+
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+.menu li:first-child {
+    margin-top: 2.4rem;
+}
+
+.menu li button {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    padding-left: 1.2rem;
+
+    width: 100.9%;
+    height: 100%;
+
+    border: none;
+    background: none;
+
+    font-family: 'VT323';
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+.menu li .tweetButton {
+    display: flex;
+    padding: .9rem 11.2rem;
+
+
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+}
+
+.menu li button:active,
+.menu li:last-child button:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding-top: .3rem;
+}
+
+.menu li .tweetButton:active {
+    padding-top: 1.2rem;
+}
+
+.menu li:last-child {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+    padding: 1rem 1.6rem 1rem 1.2rem;
+    padding-right: 1.6rem;
+    padding-top: 1rem;
+
+    margin-top: 9.3rem;
+    height: 6.4rem;
+
+    position: relative;
+}
+
+
+.menu li:last-child div {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu li:last-child div strong {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.menu li:last-child div span {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    color: var(--dark-gray);
+}
+
+.menu li:last-child button {
+    padding: .5rem 0 .5rem .85rem;
+
+    position: absolute;
+    right: 1.6rem;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.menu li:last-child button:active {
+    padding-top: .7rem;
+}
