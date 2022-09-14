@@ -155,18 +155,29 @@ export function Header({searchBar}) {
                     </Link>
                 </span>
 
-                {!searchBar &&
-                    <span className={styles.title}>
-                      Homepage
-                    </span>
-                }
-
-            {searchBar && 
-                <SearchBar />
+            {searchBar
+                ? 
+                 <SearchBar />
+                :
+                 <span className={styles.title}>
+                    Homepage
+                 </span>
             }
-            <button className={styles.ungroupButton}>
-                <Image src={ungroupImg}/>
-            </button>
+            
+
+            {!searchBar
+                &&
+                 <div className={styles.group}>
+                     <button className={styles.ungroupButton}>
+                        <Image src={ungroupImg}/>
+                     </button>
+                     
+                     <span className={styles.searchBar}>
+                        <SearchBar />
+                     </span>
+                 </div>
+            }
+
         </header>
     )
 }

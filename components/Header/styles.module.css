@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
 
-    width: min(77.5rem, 100%);
+    width: 100%;
     height: 5.4rem;
 
     position: fixed;
@@ -201,10 +201,18 @@
     line-height: 1.6rem;
 }
 
+.searchBar {
+    display: none;
+}
+
 
 /* ========== Tablet Size ========== */
 
 @media (min-width: 834px) {
+    .header {
+        width: min(77.5rem, 100%);
+    }
+
     .menu {
         display: none;
     }
@@ -219,5 +227,23 @@
 
     .title {
         display: block;
+    }
+}
+
+/* ========== Desk Size ========== */
+
+@media (min-width: 1512px) {
+    .searchBar {
+        display: block;
+    }
+
+    .header {
+        width: min(119.309rem, 100%);
+    }
+
+    .group {
+        display: flex;
+        align-items: center;
+        gap: 3.3rem;
     }
 }

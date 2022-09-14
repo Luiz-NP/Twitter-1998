@@ -16,6 +16,8 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Post } from "../components/Post";
 import { AsideMenu } from "../components/AsideMenu";
+import { TrendCard } from "../components/TrendCard";
+import { WhoToFollowCard } from "../components/WhoToFollowCard";
 
 export default function Profile() {
     return (
@@ -104,7 +106,11 @@ export default function Profile() {
                         <Post />
                         <Post />
                     </div>
-                </div>
+                    <div className={reuse.otherSide}>
+                        <TrendCard />
+                        <WhoToFollowCard />
+                        </div>
+                    </div>
 
             <Footer />
         </div>

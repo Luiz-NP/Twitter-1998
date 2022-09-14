@@ -9,6 +9,8 @@ import { Card } from "../components/Card";
 import { Post } from "../components/Post";
 import { Footer } from "../components/Footer";
 import { AsideMenu } from "../components/AsideMenu";
+import { TrendCard } from "../components/TrendCard";
+import { WhoToFollowCard } from "../components/WhoToFollowCard";
 
 export default function Home() {
   return (
@@ -36,6 +38,10 @@ export default function Home() {
           <Post />
           <Post />
           <Post />
+        </div>
+        <div className={styles.otherSide}>
+          <TrendCard />
+          <WhoToFollowCard />
         </div>
       </div>
 

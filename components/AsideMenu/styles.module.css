@@ -110,3 +110,13 @@
 .menu li:last-child button:active {
     padding-top: .7rem;
 }
+
+@media (min-width: 1512px) {
+    .searchBar {
+        display: none;
+    }
+
+    .menu li:first-child {
+        margin-top: 0;
+    }
+}

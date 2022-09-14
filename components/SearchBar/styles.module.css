@@ -33,10 +33,17 @@
 
     box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
 
-    padding: .7rem .5rem .5rem .8rem;
+    padding: .9rem .5rem .5rem .8rem;
 }
 
 .searchButton:active {
     box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
     padding: .8rem .6rem .5rem .8rem;
+}
+
+@media (min-width: 1512px) {
+    .input {
+        width: 32rem;
+    }
+
 }

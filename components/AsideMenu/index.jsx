@@ -22,7 +22,9 @@ import { SearchBar } from "../SearchBar";
 export function AsideMenu() {
     return (
         <div>
-            <SearchBar />
+            <div className={styles.searchBar}>
+                <SearchBar />
+            </div>
             <ul className={styles.menu}>
                 <li>
                     <Link href="/">
