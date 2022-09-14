@@ -1,0 +1,44 @@
+.trend {
+    display: flex;
+    flex-direction: column;
+
+    width: 34.3rem;
+
+    margin-top: 7.2rem;
+
+    padding: 1.2rem 0 1.6rem 1.6rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+}
+
+.title {
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+
+    margin-bottom: 2.2rem;
+}
+
+.topics {
+    list-style: none;
+}
+
+.topics li div span {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    color: var(--dark-gray);
+}
+
+.topics li div h2 {
+    font-weight: 400;
+}
+
+@media (min-width: 1512px) {
+    .trend {
+        margin-top: 0;
+    }
+
+}
