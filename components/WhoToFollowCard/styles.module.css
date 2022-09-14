@@ -1,0 +1,78 @@
+.trend {
+    display: flex;
+    flex-direction: column;
+
+    width: 34.3rem;
+
+    padding: 1.2rem 0 1.6rem 1.6rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+}
+
+.title {
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+
+    margin-bottom: 2.4rem;
+}
+
+.topics {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    list-style: none;
+}
+
+.topics li {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    
+    position: relative;
+}
+
+.topics li button {
+    position: absolute;
+    right: 1.6rem;
+
+    width: 7.1rem;
+    height: 3.6rem;
+
+    font-family: 'VT323';
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+
+    background-color: var(--bg-color);
+
+    border: none;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.topics li button:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding-top: .2rem;
+}
+
+.topics li div span {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+
+    color: var(--dark-gray);
+}
+
+.topics li div h2 {
+    font-weight: 400;
+}
+
+.showMore {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+
+    cursor: pointer;
+}
