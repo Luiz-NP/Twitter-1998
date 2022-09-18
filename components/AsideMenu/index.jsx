@@ -27,7 +27,7 @@ export function AsideMenu() {
             </div>
             <ul className={styles.menu}>
                 <li>
-                    <Link href="/">
+                    <Link href="/home">
                         <button>
                             <Image 
                             src={homeIcon} 
@@ -53,7 +53,7 @@ export function AsideMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/home">
                         <button>
                             <Image 
                             src={discoverIcon} 
@@ -66,7 +66,7 @@ export function AsideMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/home">
                         <button>
                             <Image 
                             src={notificationIcon} 
@@ -79,7 +79,7 @@ export function AsideMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/home">
                         <button>
                             <Image 
                             src={messageIcon} 
@@ -92,7 +92,7 @@ export function AsideMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/home">
                         <button>
                             <Image 
                             src={bookmarkIcon} 
@@ -105,7 +105,7 @@ export function AsideMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/home">
                         <button>
                             <Image 
                             src={listIcon} 
@@ -118,7 +118,7 @@ export function AsideMenu() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">
+                    <Link href="/home">
                         <button>
                             <Image 
                             src={moreIcon} 

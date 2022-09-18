@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+
+    font-size: 1.6rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+
+    padding-top: 1.5rem;
+
+    width: 34.3rem;
+    height: 35.3rem;
+
+    border-radius: 1px;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.title {
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.label {
+    display: block;
+}
+
+.input {
+    height: 3.6rem;
+
+    padding: 1rem;
+    margin-top: 5px;
+
+    outline: none;
+
+    border: none;
+
+    box-shadow: inset 2px 2px 2px black;
+
+    color: black;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
+}
+
+.button {
+    background: none;
+
+    padding: 1rem;    
+
+    border: none;
+    border-radius: 1px;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+
+    font-family: 'VT323';
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+.button:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    font-size: 1.9rem;
+}
+
+.span {
+    color: rgb(32, 112, 202);
+    cursor: pointer;
+}

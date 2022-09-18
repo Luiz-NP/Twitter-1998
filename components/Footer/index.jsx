@@ -16,7 +16,7 @@ export function Footer() {
         <footer className={styles.footer}>
         <ul>
           <li>
-            <Link href="/">
+            <Link href="/home">
               <button>
                 <Image
                  src={homeIcon} 

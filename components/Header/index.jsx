@@ -146,7 +146,7 @@ export function Header({searchBar}) {
                 </span>
 
                 <span className={styles.deskImg}>
-                    <Link href="/">
+                    <Link href="/home">
                         <Image
                          src={logo}
                          width={48}
