@@ -1,53 +1,69 @@
-import Head from "next/head";
+import Image from "next/image";
 
 //css
-import styles from "../styles/home.module.css";
+import styles from "../styles/login.module.css";
 
-//components
-import { Header } from "../components/Header";
-import { Card } from "../components/Card";
-import { Post } from "../components/Post";
-import { Footer } from "../components/Footer";
-import { AsideMenu } from "../components/AsideMenu";
-import { TrendCard } from "../components/TrendCard";
-import { WhoToFollowCard } from "../components/WhoToFollowCard";
+//images
+import logo from "../public/images/icons/logo.png";
+import { useState } from "react";
 
-export default function Home() {
-  return (
-    <div className={styles.wrapper}>
+export default function Login() {
 
-      <Head>
-        <title>Home</title>
-      </Head>
+    const [haveAccount, setHaveAccount] = useState(false);
 
-      <Header />
-
-      <div className={styles.main}>
-        <div className={styles.asideMenu}>
-          <AsideMenu />
+    return (
+        <div className={styles.container}>
+            <form className={styles.form}>
+                <Image 
+                 src={logo}
+                 width={50}
+                 height={50} 
+                />
+                <h1 className={styles.title}>
+                    {haveAccount
+                     ? "Log in to Twitter"
+                     : "Create your account"
+                    }
+                </h1>
+                <div>
+                    <label htmlFor="username" className={styles.label}>
+                        Username
+                    </label>
+                    <input 
+                        id="username"
+                        type="text"
+                        name="username"
+                        required
+                        placeholder="username"
+                        className={styles.input}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="password" className={styles.label}>
+                        Password
+                    </label>
+                    <input 
+                        id="password"
+                        type="password" 
+                        name="password"
+                        required
+                        placeholder="password"
+                        className={styles.input}
+                    />
+                </div>
+                <button type="Submit" className={styles.button}>
+                    {haveAccount
+                     ? "Log in"
+                     : "Sign up"
+                    }
+                </button>
+                <span className={styles.span} onClick={() => setHaveAccount(!haveAccount)}>
+                    {haveAccount
+                     ? "sign up"
+                     : "log in"
+                    }
+                </span>
+            </form>
         </div>
-        <div className={styles.content}>
-          <Card />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-        </div>
-        <div className={styles.otherSide}>
-          <TrendCard />
-          <WhoToFollowCard />
-        </div>
-      </div>
-
-          
-
-      <Footer />
-    </div>
-  );
+    )
 }
