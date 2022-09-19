@@ -77,3 +77,51 @@
     color: rgb(32, 112, 202);
     cursor: pointer;
 }
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25rem;
+    height: 16rem;
+
+    position: absolute;
+    z-index: 1;
+
+    font-size: 2rem;
+    line-height: 2rem;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+    background-color: var(--bg-color);
+}
+
+.closeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 3.6rem;
+    height: 3.6rem;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-family: 'VT323';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: var(--bg-color);
+
+    border: none;
+
+    box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
+}
+
+.closeButton:active {
+    box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
+    padding: .9rem .9rem .8rem .8rem;
+}
