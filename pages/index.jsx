@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../contexts/AuthContext";
+import { useRouter } from "next/router";
 
 //css
 import styles from "../styles/login.module.css";
@@ -11,15 +12,27 @@ import logo from "../public/images/icons/logo.png";
 import closeIcon from "../public/images/close.png";
 
 export default function Login() {
+    const router = useRouter();
     const { register, handleSubmit } = useForm();
     const [signError, setSignError] = useState(false);
+    const [signMessage, setSignMessage] = useState('');
     const { signIn, haveAccount, setHaveAccount} = useContext(AuthContext);
 
     async function handleSignIn(data) {
-        const sign = await signIn(data);
-        
-        if (sign === "error") {
-            setSignError(true)
+        const message = await signIn(data);
+
+        if (message === "User not found.") {
+            setSignError(true);
+            setSignMessage(message);
+        }
+
+        if (message === "Invalid password.") {
+            setSignError(true);
+            setSignMessage(message);
+        }
+
+        if (message === "Logged.") {
+            router.push("/home");
         }
     }
 
@@ -34,7 +47,7 @@ export default function Login() {
                          height={20}
                         />
                     </button>
-                    <span>username or password invalid.</span>
+                    <span>{signMessage}</span>
                 </div>
             }
             <form className={styles.form} onSubmit={handleSubmit(handleSignIn)}>

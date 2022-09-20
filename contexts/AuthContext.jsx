@@ -1,26 +1,19 @@
 import { createContext, useState } from "react";
-import { useRouter } from "next/router";
 import axios from "axios";
 
 export const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
     const [haveAccount, setHaveAccount] = useState(true);
-    const router = useRouter();
     
     async function signIn({ username, password }) {
-        try {
-            await axios.post(`/api/${haveAccount ? "login" : "signUp"}`, {
-                username,
-                password
-            })
-            .then(res => {
-                console.log(res)
-                router.push("/home");
-            })    
-        } catch (error) {
-            return "error";
-        }
+        return await axios.post(`/api/${haveAccount ? 'login' : 'signIn'}`, {
+            username,
+            password
+        })
+        .then(res => {
+            return res.data.message;
+        });
     }
 
     return (
