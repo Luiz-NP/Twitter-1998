@@ -67,3 +67,21 @@ export default function EditProfile() {
         </div>
     )
 }
+
+export async function getServerSideProps(ctx) {
+    const { 'auth-token': token } = parseCookies(ctx);
+  
+    if (!token || token === 'undefined') {
+      destroyCookie(ctx, 'auth-token');
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            }
+        }
+    }
+  
+    return {
+        props: {}
+    }
+}

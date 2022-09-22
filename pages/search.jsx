@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 
 //css
 import reuse from "../styles/home.module.css";
@@ -25,3 +24,21 @@ export default function Search() {
         </div>
     )
 }
+
+export async function getServerSideProps(ctx) {
+    const { 'auth-token': token } = parseCookies(ctx);
+  
+    if (!token || token === 'undefined') {
+      destroyCookie(ctx, 'auth-token');
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            }
+        }
+    }
+  
+    return {
+        props: {}
+    }
+  }

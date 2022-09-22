@@ -1,14 +1,17 @@
 require("../../db/mongoose");
 import { UserModel } from "../../models/User";
+import jwt from "jsonwebtoken";
 
 export default async (req, res) => {
-    const { username, password } = req.body;
+    const { username: name, password } = req.body;
 
-    const validUser = await UserModel.findOne({username});
-    if (!validUser) res.json({message: "User not found."});
+    const validUser = await UserModel.findOne({name});
+    if (!validUser) return res.json({message: "User not found."});
 
     const validPassword = await UserModel.findOne({password});
-    if (!validPassword) res.json({message: "Invalid password."});
+    if (!validPassword) return res.json({message: "Invalid password."});
 
-    res.json({message: "Logged."})
+    const token = jwt.sign({id: validUser.id}, process.env.JWT_SECRET);    
+
+    res.json({message: "Logged.", token});
 }

@@ -12,8 +12,12 @@ import chartIcon from "../../public/images/chart.png";
 import emojiIcon from "../../public/images/emoji.png";
 import calendarIcon from "../../public/images/time.png";
 import locationIcon from "../../public/images/location.png";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export function Card() {
+    const { user } = useContext(AuthContext);
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -29,7 +33,8 @@ export function Card() {
             
             <input 
              className={styles.input}
-             type="text" 
+             type="text"
+             value={user?.name}
             />
 
             <ul className={styles.buttons}>

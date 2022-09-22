@@ -17,24 +17,25 @@ import messageIcon from "../../public/images/message.png";
 import bookmarkIcon from "../../public/images/bookmark.png";
 import listIcon from "../../public/images/lists.png";
 import moreIcon from "../../public/images/more.png";
+
+//components
 import { SearchBar } from "../SearchBar";
 
 export function Header({searchBar}) {
-    const menu = useRef();
 
     function showMenu() {
-        menu.current.style.transform = "translateX(-5%)";
+        menu.style.transform = "translateX(-5%)";
         document.body.style.overflow = "hidden";
     }
 
     function hideMenu() {
-        menu.current.style.transform = "translateX(-100%)";
+        menu.style.transform = "translateX(-100%)";
         document.body.style.overflow = "scroll";
     }
 
     return (
         <header className={styles.header}>
-            <div ref={menu} className={styles.menu}>
+            <div id="menu" className={styles.menu}>
                 <div className={styles.head}>
                     <span>
                         Account Info

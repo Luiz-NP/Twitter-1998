@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { parseCookies, destroyCookie } from "nookies";
 
 //css
 import styles from "../styles/home.module.css";
@@ -45,9 +46,25 @@ export default function Home() {
         </div>
       </div>
 
-          
-
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  const { 'auth-token': token } = parseCookies(ctx);
+
+  if (!token || token === 'undefined') {
+    destroyCookie(ctx, 'auth-token');
+      return {
+          redirect: {
+              destination: '/',
+              permanent: false,
+          }
+      }
+  }
+
+  return {
+      props: {}
+  }
 }

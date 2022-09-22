@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { parseCookies, destroyCookie } from "nookies";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 //css
 import reuse from "../styles/home.module.css";
@@ -20,6 +23,8 @@ import { TrendCard } from "../components/TrendCard";
 import { WhoToFollowCard } from "../components/WhoToFollowCard";
 
 export default function Profile() {
+    const { user } = useContext(AuthContext);
+
     return (
         <div className={reuse.wrapper}>
             <Head>
@@ -50,10 +55,10 @@ export default function Profile() {
                             </div>
                             <div>
                                 <h2 className={styles.username}>
-                                    Eren Demir
+                                    {user?.name}
                                 </h2>
                                 <span className={styles.nickname}>
-                                    @erendmrv
+                                    {user?.username}
                                 </span>
                             </div>
                             <span className={styles.office}>Front-end Developer at @twitter</span>
@@ -116,3 +121,21 @@ export default function Profile() {
         </div>
     )
 }
+
+export async function getServerSideProps(ctx) {
+    const { 'auth-token': token } = parseCookies(ctx);
+  
+    if (!token || token === 'undefined') {
+      destroyCookie(ctx, 'auth-token');
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            }
+        }
+    }
+  
+    return {
+        props: {}
+    }
+  }

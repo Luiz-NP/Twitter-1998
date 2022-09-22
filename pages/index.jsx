@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../contexts/AuthContext";
 import { useRouter } from "next/router";
+import { parseCookies } from "nookies";
 
 //css
 import styles from "../styles/login.module.css";
@@ -21,24 +22,23 @@ export default function Login() {
     async function handleSignIn(data) {
         const message = await signIn(data);
 
-        if (message === "User not found.") {
+        if (message === "User not found." 
+         || message === "Username already exists."
+         || message === "Invalid password.") {
             setSignError(true);
             setSignMessage(message);
         }
 
-        if (message === "Invalid password.") {
-            setSignError(true);
-            setSignMessage(message);
-        }
-
-        if (message === "Logged.") {
+        if (message === "Logged."
+         || message === "User Created.") {
             router.push("/home");
         }
+
     }
 
     return (
         <div className={styles.container}>
-            {signError && haveAccount &&
+            {signError &&
                 <div className={styles.error}>
                     <button className={styles.closeButton} onClick={() => setSignError(false)}>
                         <Image
@@ -96,7 +96,7 @@ export default function Login() {
                      : "Sign up"
                     }
                 </button>
-                <span className={styles.span} onClick={() => {setHaveAccount(!haveAccount); setSignError(false)}}>
+                <span className={styles.span} onClick={() => {setHaveAccount(!haveAccount)}}>
                     {haveAccount
                      ? "sign up"
                      : "log in"
@@ -105,4 +105,21 @@ export default function Login() {
             </form>
         </div>
     )
+}
+
+export async function getServerSideProps(ctx) {
+    const { 'auth-token': token } = parseCookies(ctx);
+
+    if (token) {
+        return {
+            redirect: {
+                destination: '/home',
+                permanent: false,
+            }
+        }
+    }
+
+    return {
+        props: {}
+    }
 }
