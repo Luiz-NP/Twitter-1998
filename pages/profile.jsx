@@ -107,9 +107,7 @@ export default function Profile() {
                                 </li>
                             </ul>
                         </div>
-                        <Post />
-                        <Post />
-                        <Post />
+                        <Post name={user?.name} username={user?.username}/>
                     </div>
                     <div className={reuse.otherSide}>
                         <TrendCard />

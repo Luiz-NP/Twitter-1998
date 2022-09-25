@@ -1,5 +1,7 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import { parseCookies, destroyCookie } from "nookies";
+import axios from "axios";
 
 //css
 import styles from "../styles/home.module.css";
@@ -14,6 +16,15 @@ import { TrendCard } from "../components/TrendCard";
 import { WhoToFollowCard } from "../components/WhoToFollowCard";
 
 export default function Home() {
+  const [tweets, setTweets] = useState([]);
+  const [sentTweet, setSentTwitter] = useState(false);
+
+  useEffect(() => {
+    axios.get("/api/getAllTweets").then(res => {
+        setTweets(res.data.tweets);
+      });
+  }, [sentTweet]);
+
   return (
     <div className={styles.wrapper}>
 
@@ -28,17 +39,12 @@ export default function Home() {
           <AsideMenu />
         </div>
         <div className={styles.content}>
-          <Card />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          <Card setSentTwitter={setSentTwitter} />
+          
+            {tweets?.map(tweet => (
+              <Post name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content}/>
+            ))}
+
         </div>
         <div className={styles.otherSide}>
           <TrendCard />
