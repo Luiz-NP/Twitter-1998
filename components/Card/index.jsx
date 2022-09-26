@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { set, useForm } from "react-hook-form";
+import axios from "axios";
 
 //css
 import styles from "./styles.module.css";
@@ -15,11 +17,40 @@ import locationIcon from "../../public/images/location.png";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
-export function Card() {
+export function Card({ setSentTwitter }) {
+    const { register, handleSubmit } = useForm();
     const { user } = useContext(AuthContext);
 
+    function postTweet({ content }) {
+        const ownerId = user._id;
+        const ownerName = user.name;
+        const ownerUsername = user.username;
+
+        axios.post("/api/createTweet", {
+            ownerId,
+            content,
+            ownerName,
+            ownerUsername
+        })
+        .then(res => {
+            setSentTwitter(res);
+        })
+
+    }
+
+    function autoResize() {
+        content.style.height = content.scrollHeight + "px";
+    }
+
+    function resetContent() {
+        setTimeout(() => {
+            content.value = ""; 
+            content.style.height = "16px";
+        });
+    }
+
     return (
-        <div className={styles.container}>
+        <form className={styles.container} onSubmit={handleSubmit(postTweet)}>
             <div className={styles.header}>
                 <Link href="/profile">
                     <Image 
@@ -31,10 +62,13 @@ export function Card() {
                 <span className={styles.question}>What’s <br /> happening?</span>
             </div>
             
-            <input 
+            <textarea
+             {...register("content")}
              className={styles.input}
-             type="text"
-             value={user?.name}
+             name="content"
+             required
+             onChange={autoResize}
+             id="content"
             />
 
             <ul className={styles.buttons}>
@@ -69,12 +103,12 @@ export function Card() {
                     </button>
                 </li>
                 <li>
-                    <button type="submit">
+                    <button type="submit" onClick={resetContent}>
                         Tweet
                     </button>
                 </li>
             </ul>
             
-        </div>
+        </form>
     )
 }

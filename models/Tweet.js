@@ -2,9 +2,19 @@ const mongoose = require("mongoose");
 
 const Tweet = new mongoose.Schema({
 
-    owner: {
+    ownerId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+
+    ownerName: {
+        type: String,
+        required: true,
+    },
+
+    ownerUsername: {
+        type: String,
+        required: true,
     },
 
     content: {
