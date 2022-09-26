@@ -8,22 +8,23 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
     const [haveAccount, setHaveAccount] = useState(true);
     const [user, setUser] = useState(null);
-    const { 'auth-token': token } = parseCookies();
+    const [logged, setLogged] = useState(false);
 
+    if (logged) {
+        const { 'auth-token': token } = parseCookies();
 
-        useEffect(() => {
-            if (token) {
-                const decode = jwt.decode(token);
-                
-                axios.post('/api/recover', {
-                    decodeId: decode?.id
-                })
-                .then(res => {
-                    setUser(res.data?.user)
-                });
-            } 
-        }, [token]);
+        if (token) {
+            const decode = jwt.decode(token);
             
+            axios.post('/api/recover', {
+                decodeId: decode?.id
+            })
+            .then(res => {
+                setUser(res.data?.user)
+            });
+        } 
+    }
+    
     async function signIn({ username, password }) {
         return await axios.post(`/api/${haveAccount ? 'login' : 'signIn'}`, {
             username,
@@ -34,6 +35,7 @@ export function AuthProvider({ children }) {
                 maxAge: 60 * 60 * 1, // 1 hour
             });
 
+            setLogged(true);
             return res.data.message;
         });
     }

@@ -118,11 +118,17 @@ export default function Profile() {
                                 </li>
                             </ul>
                         </div>
+<<<<<<< HEAD
                         <Post name={user?.name} username={user?.username}/>
 
                         {tweets?.map(tweet => (
                             <Post name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content}/>
                         ))}
+=======
+                        <Post />
+                        <Post />
+                        <Post />
+>>>>>>> parent of f18b362 (adjustments for rendering)
                     </div>
                     <div className={reuse.otherSide}>
                         <TrendCard />

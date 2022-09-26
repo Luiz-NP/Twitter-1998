@@ -10,7 +10,7 @@ import retweetIcon from "../../public/images/retweet.png";
 import likeIcon from "../../public/images/like.png";
 import shareIcon from "../../public/images/share.png";
 
-export function Post({ name, username, content }) {
+export function Post() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -18,9 +18,9 @@ export function Post({ name, username, content }) {
                 <Image src={icon2} />
 
                 <div className={styles.content}>
-                    <p>{ name } <span>{ username }</span></p>
+                    <p>Tommy Blue <span>@bluee</span></p>
                     
-                    <p>{ content }</p>
+                    <p> Amet habitant mollis adipiscing pretium scelerisque urna euismod nec nullam.</p>
                 </div>
             </div>
 
