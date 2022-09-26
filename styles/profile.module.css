@@ -6,7 +6,7 @@
 
     gap: 1.2rem;
 
-    width: min(47.8rem, 100%);
+    width: 34.3rem;
 
     padding: 1.6rem 1.6rem 6rem 1.6rem;
 
@@ -131,5 +131,12 @@
 .buttons li button:active {
     box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
     padding-top: 1.2rem;
+}
+
+@media (min-width: 834px) {
+
+    .profileCard {
+        width: 47.8rem;
+    }
 }
 

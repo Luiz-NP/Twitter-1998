@@ -1,9 +1,10 @@
-import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 import { parseCookies, destroyCookie } from "nookies";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthContext";
+import axios from "axios";
 
 //css
 import reuse from "../styles/home.module.css";
@@ -24,6 +25,16 @@ import { WhoToFollowCard } from "../components/WhoToFollowCard";
 
 export default function Profile() {
     const { user } = useContext(AuthContext);
+    const [tweets, setTweets] = useState([]);
+
+    useEffect(() => {
+        const ownerId = user?._id
+
+        axios.post("/api/getTweetsByUser", { ownerId }).then(res => {
+            setTweets(res.data.tweets);
+            console.log(tweets)
+          });
+      }, []);
 
     return (
         <div className={reuse.wrapper}>
@@ -107,7 +118,14 @@ export default function Profile() {
                                 </li>
                             </ul>
                         </div>
-                        <Post name={user?.name} username={user?.username}/>
+                        {tweets[0] !== undefined
+                         ? tweets?.map(tweet => (
+                            <Post key={tweet._id} name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content}/>
+                           ))
+                         : <h2>nada aq</h2>
+                        }
+
+                        {}
                     </div>
                     <div className={reuse.otherSide}>
                         <TrendCard />
