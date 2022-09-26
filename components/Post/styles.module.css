@@ -1,5 +1,6 @@
 .container {
     width: min(34.3rem, 100%);
+    height: 12.4rem;
 
     padding-bottom: 1.6rem;
 
@@ -12,11 +13,10 @@
 
 .header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.185rem;
 
     padding-left:1.58rem;
-    padding-top: 10px;
 }
 
 .header img {
@@ -44,10 +44,6 @@
     color: var(--dark-gray);
 }
 
-.content p {
-    width: 100%;
-    line-break: anywhere;
-}
 
 .buttons {
     display: flex;

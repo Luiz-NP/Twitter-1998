@@ -31,8 +31,6 @@
 
 .input {
     width: 31.5rem;
-    height: 16px;
-    resize: none;
 
     margin-top: calc(3rem - 16px);
     margin-left: 1.6rem;
@@ -107,8 +105,6 @@
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.6rem;
-
-    width: 100%;
 }
 
 .buttons li:active {
