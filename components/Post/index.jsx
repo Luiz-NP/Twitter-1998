@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
+import axios from "axios";
 
 //css
 import styles from "./styles.module.css";
@@ -10,7 +13,26 @@ import retweetIcon from "../../public/images/retweet.png";
 import likeIcon from "../../public/images/like.png";
 import shareIcon from "../../public/images/share.png";
 
-export function Post({ name, username, content }) {
+export function Post({ name, username, content, tweetId }) {
+    const { user } = useContext(AuthContext);
+    const [liked, setLiked] = useState(false);
+
+    function like() {
+        setLiked(!liked);
+
+        const ownerId = user._id;
+
+        axios.post("/api/likeTweet", {
+            tweetId,
+            ownerId,
+            liked
+        })
+        .then(res => {
+            console.log(res);
+        })
+
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -36,7 +58,7 @@ export function Post({ name, username, content }) {
                     </button>
                 </li>
                 <li>
-                    <button>
+                    <button onClick={like}>
                         <Image src={likeIcon}/>
                     </button>
                 </li>

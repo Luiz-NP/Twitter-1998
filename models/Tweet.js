@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const Tweet = new mongoose.Schema({
 
     ownerId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        type: String,
+        required: true
     },
 
     ownerName: {
@@ -24,8 +24,10 @@ const Tweet = new mongoose.Schema({
     },
 
     likes: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ownerId: {
+            type: String,
+            required: true
+        }
     }]
 },
 {
