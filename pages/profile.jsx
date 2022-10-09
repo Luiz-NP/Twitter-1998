@@ -24,8 +24,9 @@ import { TrendCard } from "../components/TrendCard";
 import { WhoToFollowCard } from "../components/WhoToFollowCard";
 
 export default function Profile() {
-    const { user } = useContext(AuthContext);
+    const { user, likesInfo, setLikesInfo } = useContext(AuthContext);
     const [tweets, setTweets] = useState([]);
+
 
     useEffect(() => {
         const ownerId = user?._id
@@ -34,7 +35,7 @@ export default function Profile() {
             setTweets(res.data.tweets);
             console.log(tweets)
           });
-      }, []);
+      }, [likesInfo]);
 
     return (
         <div className={reuse.wrapper}>
@@ -120,7 +121,7 @@ export default function Profile() {
                         </div>
                         {tweets[0] !== undefined
                          ? tweets?.map(tweet => (
-                            <Post key={tweet._id} name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content}/>
+                            <Post key={tweet._id} tweetId={tweet._id} name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content} setLikesInfo={setLikesInfo} likes={tweet.likes}/>
                            ))
                          : <h2>nada aq</h2>
                         }

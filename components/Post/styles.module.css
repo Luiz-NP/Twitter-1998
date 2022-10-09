@@ -58,7 +58,7 @@
     list-style: none;
 }
 
-.buttons li {
+.buttons button {
     background: none;
     padding: 3px 0 0 2.5px;
 
@@ -69,19 +69,30 @@
     border-radius: 1px;
 
     box-shadow: 2px 2px 1px black, inset 2px 2px 1px var(--light-gray);
-}
 
-.buttons li button {
-    background: none;
-    border: none;
-    padding: .6rem;
+    position: relative;
 
+    padding: .7rem .5rem .6rem .7rem;
+    
     color: black;
 }
 
-.buttons li:active {
+
+
+.buttons button:active {
     box-shadow: 2px 2px 1px var(--light-gray), inset 2px 2px 1px black;
-    padding: .4rem .2rem .2rem;
+    padding: .8rem .5rem .6rem .7rem;
+}
+
+.buttons button .span {
+    position: absolute;
+    left: 45px;
+    top: 12px;
+
+    font-size: large;
+    color: var(--dark-gray);
+
+    font-family: 'VT323';
 }
 
 @media (min-width: 834px) {

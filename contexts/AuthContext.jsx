@@ -8,6 +8,7 @@ export const AuthContext = createContext({});
 export function AuthProvider({ children }) {
     const [haveAccount, setHaveAccount] = useState(true);
     const [user, setUser] = useState(null);
+    const [likesInfo, setLikesInfo] = useState([]);
     const { 'auth-token': token } = parseCookies();
 
 
@@ -39,7 +40,7 @@ export function AuthProvider({ children }) {
     }
 
     return (
-        <AuthContext.Provider value={{ signIn, haveAccount, setHaveAccount, user}}>
+        <AuthContext.Provider value={{ signIn, haveAccount, setHaveAccount, user, likesInfo, setLikesInfo}}>
             {children}
         </AuthContext.Provider>
     )

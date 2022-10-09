@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { parseCookies, destroyCookie } from "nookies";
+import { AuthContext } from "../contexts/AuthContext";
 import axios from "axios";
 
 //css
@@ -18,12 +19,13 @@ import { WhoToFollowCard } from "../components/WhoToFollowCard";
 export default function Home() {
   const [tweets, setTweets] = useState([]);
   const [sentTweet, setSentTwitter] = useState(false);
+  const { likesInfo, setLikesInfo } = useContext(AuthContext);
 
   useEffect(() => {
     axios.get("/api/getAllTweets").then(res => {
         setTweets(res.data.tweets);
       });
-  }, [sentTweet]);
+  }, [sentTweet, likesInfo]);
 
   return (
     <div className={styles.wrapper}>
@@ -42,7 +44,7 @@ export default function Home() {
           <Card setSentTwitter={setSentTwitter} />
           
             {tweets?.map(tweet => (
-              <Post key={tweet._id} tweetId={tweet._id} name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content}/>
+              <Post key={tweet._id} tweetId={tweet._id} name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content} setLikesInfo={setLikesInfo} likes={tweet.likes}/>
             ))}
 
         </div>
