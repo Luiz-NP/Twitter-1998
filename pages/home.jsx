@@ -44,7 +44,16 @@ export default function Home() {
           <Card setSentTwitter={setSentTwitter} />
           
             {tweets?.map(tweet => (
-              <Post key={tweet._id} tweetId={tweet._id} name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content} setLikesInfo={setLikesInfo} likes={tweet.likes}/>
+              <Post 
+               key={tweet._id}
+               userId={tweet.ownerId}
+               tweetId={tweet._id} 
+               name={tweet.ownerName} 
+               username={tweet.ownerUsername} 
+               content={tweet.content} 
+               setLikesInfo={setLikesInfo} 
+               likes={tweet.likes}
+              />
             ))}
 
         </div>

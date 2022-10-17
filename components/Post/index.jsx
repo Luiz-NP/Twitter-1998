@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import Link from "next/link";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "axios";
 
@@ -14,7 +15,7 @@ import likeIcon from "../../public/images/like.png";
 import likedIcon from "../../public/images/liked.png";
 import shareIcon from "../../public/images/share.png";
 
-export function Post({ name, username, content, tweetId, setLikesInfo, likes}) {
+export function Post({ name, username, content, userId, tweetId, setLikesInfo, likes}) {
     const { user } = useContext(AuthContext);
     const [liked, setLiked] = useState(false);
     const ownerId = user?._id;
@@ -39,7 +40,7 @@ export function Post({ name, username, content, tweetId, setLikesInfo, likes}) {
                 <Image src={icon2} />
 
                 <div className={styles.content}>
-                    <p>{ name } <span>{ username }</span></p>
+                    <p><Link href={`/profile/${userId}`}>{ name }</Link> <span><Link href={`/profile/${userId}`}>{ username }</Link></span></p>
                     
                     <p>{ content }</p>
                 </div>
