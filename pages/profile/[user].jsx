@@ -3,32 +3,34 @@ import Link from "next/link";
 import Head from "next/head";
 import { parseCookies, destroyCookie } from "nookies";
 import { useContext, useState, useEffect } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import axios from "axios";
 
 //css
-import reuse from "../styles/home.module.css";
-import styles from "../styles/profile.module.css";
+import reuse from "../../styles/home.module.css";
+import styles from "../../styles/profile.module.css";
 
 //images
-import icon1 from "../public/images/icons/icon1.png";
-import locationIcon from "../public/images/location.png"
-import calendarIcon from "../public/images/time.png";
+import icon1 from "../../public/images/icons/icon1.png";
+import locationIcon from "../../public/images/location.png"
+import calendarIcon from "../../public/images/time.png";
 
 //components
-import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
-import { Post } from "../components/Post";
-import { AsideMenu } from "../components/AsideMenu";
-import { TrendCard } from "../components/TrendCard";
-import { WhoToFollowCard } from "../components/WhoToFollowCard";
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { Post } from "../../components/Post";
+import { AsideMenu } from "../../components/AsideMenu";
+import { TrendCard } from "../../components/TrendCard";
+import { WhoToFollowCard } from "../../components/WhoToFollowCard";
 
 export default function Profile() {
-    const { user, likesInfo, setLikesInfo } = useContext(AuthContext);
+    const { likesInfo, setLikesInfo } = useContext(AuthContext);
     const [tweets, setTweets] = useState([]);
 
-
     useEffect(() => {
+
+        // use query and getUserById
+
         const ownerId = user?._id
 
         axios.post("/api/getTweetsByUser", { ownerId }).then(res => {
@@ -121,7 +123,15 @@ export default function Profile() {
                         </div>
                         {tweets[0] !== undefined
                          ? tweets?.map(tweet => (
-                            <Post key={tweet._id} tweetId={tweet._id} name={tweet.ownerName} username={tweet.ownerUsername} content={tweet.content} setLikesInfo={setLikesInfo} likes={tweet.likes}/>
+                            <Post 
+                             key={tweet._id} 
+                             tweetId={tweet._id} 
+                             name={tweet.ownerName} 
+                             username={tweet.ownerUsername} 
+                             content={tweet.content} 
+                             setLikesInfo={setLikesInfo} 
+                             likes={tweet.likes}
+                            />
                            ))
                          : <h2>nada aq</h2>
                         }
